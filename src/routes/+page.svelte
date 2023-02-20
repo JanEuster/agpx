@@ -3,21 +3,12 @@
 	import * as gpx from '../utils/gpx_schema';
 	import L from 'leaflet';
 	import { readGPXFromFile } from '../utils/GPXLoader';
-	import LeafletMap from '../components/LeafletMap.svelte';
+	import TrackSegmentView from '../components/TrackSegmentView.svelte';
 
 	let gpxFile: gpx.document;
 	let setGPXFile = (f: gpx.document | null) => {
 		if (f) gpxFile = f;
 		console.log('loaded gpx file:', gpxFile);
-	};
-
-	const pointsFromSegment = (trkseg: gpx.trksegType): L.LatLngExpression[] => {
-		if (trkseg.trkpt) {
-			return trkseg.trkpt.map((pt) => {
-				return [pt.lat, pt.lon] as L.LatLngExpression;
-			});
-		}
-		return [];
 	};
 </script>
 
@@ -34,7 +25,7 @@
 		{#each gpxFile.gpx.trk as trk}
 			{#if trk.trkseg}
 				{#each trk.trkseg as trkseg}
-					<LeafletMap points={pointsFromSegment(trkseg)} />
+					<TrackSegmentView {trkseg} />
 				{/each}
 			{/if}
 		{/each}
