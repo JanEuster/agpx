@@ -24,9 +24,14 @@
 			sliderKnob.style.transform = `translateX(${percentage}%)`;
 
 			// set selected
-			selected = Math.floor((percentage / 100) * points.length);
-			console.log(selected, points.length);
+			selected = Math.floor((percentage / 100) * (points.length - 1));
 		}
+	};
+	const prevSelected = (e: MouseEvent) => {
+		selected = Math.max(0, selected - 1);
+	};
+	const nextSelected = (e: MouseEvent) => {
+		selected = Math.min(points.length - 1, selected + 1);
 	};
 
 	export let trkseg: gpx.trksegType;
@@ -41,8 +46,21 @@
 
 <div>
 	<LeafletMap {points} {selected} />
+	<div>
+		<button on:click={prevSelected}>{'<'}</button>
+		<button on:click={nextSelected}>{'>'}</button>
+	</div>
 	<div class="slider" on:mousedown={moveSlider} on:mousemove={moveSlider} bind:this={slider}>
 		<div class="slider-knob" bind:this={sliderKnob} style="transform: translateX(0%);" />
+	</div>
+	<div class="selected-point">
+		{#if trkseg.trkpt}
+			<ul>
+				{#each Object.entries(trkseg.trkpt[selected]) as attr, i}
+					<li>{i} - {attr[0]}: {attr[1]}</li>
+				{/each}
+			</ul>
+		{/if}
 	</div>
 </div>
 
@@ -84,6 +102,13 @@
 			background: black;
 			border-radius: 2px;
 			content: '';
+		}
+	}
+
+	.selected-point {
+		padding: 10px;
+		ul {
+			list-style: none;
 		}
 	}
 </style>
