@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /home/toor/.cache/node/corepack/yarn/1.22.19/bin/yarn.js add cxml
+  /usr/bin/node /home/toor/.cache/node/corepack/yarn/1.22.19/bin/yarn.js add @types/detailed-xml-validator
 
 PATH: 
   /home/toor/anaconda3/bin:/home/toor/.nimble/bin:/home/toor/.cargo/bin:/home/toor/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/dart/bin
@@ -14,8 +14,17 @@ Platform:
   linux x64
 
 Trace: 
-  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:109:26)
+  Error: https://registry.yarnpkg.com/@types%2fdetailed-xml-validator: Not found
+      at Request.params.callback [as _callback] (/home/toor/.cache/node/corepack/yarn/1.22.19/lib/cli.js:66145:18)
+      at Request.self.callback (/home/toor/.cache/node/corepack/yarn/1.22.19/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/home/toor/.cache/node/corepack/yarn/1.22.19/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/home/toor/.cache/node/corepack/yarn/1.22.19/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1358:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
 
 npm manifest: 
   {
@@ -52,7 +61,12 @@ npm manifest:
   	},
   	"type": "module",
   	"dependencies": {
-  		"cxsd": "^0.1.1"
+  		"@types/xml": "^1.0.8",
+  		"cxsd": "^0.1.1",
+  		"detailed-xml-validator": "^1.0.0",
+  		"fast-xml-parser": "^4.1.2",
+  		"sass": "^1.58.3",
+  		"xml": "^1.0.1"
   	}
   }
 
@@ -350,6 +364,13 @@ Lockfile:
     version "7.3.13"
     resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.3.13.tgz#da4bfd73f49bd541d28920ab0e2bf0ee80f71c91"
     integrity sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==
+  
+  "@types/xml@^1.0.8":
+    version "1.0.8"
+    resolved "https://registry.yarnpkg.com/@types/xml/-/xml-1.0.8.tgz#97c0692b29943fd26bc3da0ea155e26bba017536"
+    integrity sha512-IptEZBtDwSPayCP8FmbordhAdjdxsif4zH29xTbBRacZeCHFHZp8OxyG1/CrS8AS0MziJUPTGWCTKbYtvHGYPg==
+    dependencies:
+      "@types/node" "*"
   
   "@typescript-eslint/eslint-plugin@^5.45.0":
     version "5.52.0"
@@ -669,7 +690,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/check-error/-/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
     integrity sha512-BrgHpW9NURQgzoNyjfq0Wu6VFO6D7IZEmJNdtgNqpzGG8RuNFHt2jQxWlAs4HMe119chBnv+34syEZtc6IhLtA==
   
-  chokidar@^3.4.1:
+  "chokidar@>=3.0.0 <4.0.0", chokidar@^3.4.1:
     version "3.5.3"
     resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
     integrity sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==
@@ -808,6 +829,13 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
     integrity sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==
+  
+  detailed-xml-validator@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/detailed-xml-validator/-/detailed-xml-validator-1.0.0.tgz#6e35d428904ec9b1c370c54d7c31a58a32b7feb5"
+    integrity sha512-jVdN77491iuRHTWeZHQLfDs7uwA78jwGlL0Kb4Y4ps4cvtFrnl7ogW6EwEU899R2d245znMipXFzcRsqNr9zTw==
+    dependencies:
+      fast-xml-parser "^3.20.0"
   
   detect-indent@^6.1.0:
     version "6.1.0"
@@ -1056,6 +1084,20 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
     integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
   
+  fast-xml-parser@^3.20.0:
+    version "3.21.1"
+    resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-3.21.1.tgz#152a1d51d445380f7046b304672dd55d15c9e736"
+    integrity sha512-FTFVjYoBOZTJekiUsawGsSYV9QL0A+zDYCRj7y34IO6Jg+2IMYEtQa+bbictpdpV8dHxXywqU7C0gRDEOFtBFg==
+    dependencies:
+      strnum "^1.0.4"
+  
+  fast-xml-parser@^4.1.2:
+    version "4.1.2"
+    resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.1.2.tgz#5a98c18238d28a57bbdfa9fe4cda01211fff8f4a"
+    integrity sha512-CDYeykkle1LiA/uqQyNwYpFbyF6Axec6YapmpUP+/RHWIoR1zKjocdvNaTsxCxZzQ6v9MLXaSYm9Qq0thv0DHg==
+    dependencies:
+      strnum "^1.0.5"
+  
   fastq@^1.6.0:
     version "1.15.0"
     resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.15.0.tgz#d04d07c6a2a68fe4599fea8d2e103a937fae6b3a"
@@ -1285,6 +1327,11 @@ Lockfile:
     version "5.2.4"
     resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.4.tgz#a291c0c6178ff1b960befe47fcdec301674a6324"
     integrity sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==
+  
+  immutable@^4.0.0:
+    version "4.2.4"
+    resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.2.4.tgz#83260d50889526b4b531a5e293709a77f7c55a2a"
+    integrity sha512-WDxL3Hheb1JkRN3sQkyujNlL/xRjAo3rJtaU5xeufUauG66JdMr32bLj4gF+vWl84DIA3Zxw7tiAjneYzRRw+w==
   
   import-fresh@^3.0.0, import-fresh@^3.2.1:
     version "3.3.0"
@@ -1877,6 +1924,15 @@ Lockfile:
       mkdirp "^0.5.1"
       rimraf "^2.5.2"
   
+  sass@^1.58.3:
+    version "1.58.3"
+    resolved "https://registry.yarnpkg.com/sass/-/sass-1.58.3.tgz#2348cc052061ba4f00243a208b09c40e031f270d"
+    integrity sha512-Q7RaEtYf6BflYrQ+buPudKR26/lH+10EmO9bBqbmPh/KeLqv8bjpTNqxe71ocONqXq+jYiCbpPUmQMS+JJPk4A==
+    dependencies:
+      chokidar ">=3.0.0 <4.0.0"
+      immutable "^4.0.0"
+      source-map-js ">=0.6.2 <2.0.0"
+  
   sax@~1.2.1:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
@@ -1937,7 +1993,7 @@ Lockfile:
       minimist "^1.2.0"
       sander "^0.5.0"
   
-  source-map-js@^1.0.2:
+  "source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
     integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
@@ -2009,6 +2065,11 @@ Lockfile:
     integrity sha512-QZTsipNpa2Ppr6v1AmJHESqJ3Uz247MUS0OjrnnZjFAvEoWqxuyFuXn2xLgMtRnijJShAa1HL0gtJyUs7u7n3Q==
     dependencies:
       acorn "^8.8.2"
+  
+  strnum@^1.0.4, strnum@^1.0.5:
+    version "1.0.5"
+    resolved "https://registry.yarnpkg.com/strnum/-/strnum-1.0.5.tgz#5c4e829fe15ad4ff0d20c3db5ac97b73c9b072db"
+    integrity sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==
   
   supports-color@^2.0.0:
     version "2.0.0"
@@ -2238,6 +2299,11 @@ Lockfile:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
     integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
+  
+  xml@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/xml/-/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
+    integrity sha512-huCv9IH9Tcf95zuYCsQraZtWnJvBtLVE0QHMOs8bWyZAFZNDcYjsPq1nEx8jKA9y+Beo9v+7OBPRisQTjinQMw==
   
   xtend@^4.0.0:
     version "4.0.2"

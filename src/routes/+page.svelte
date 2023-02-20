@@ -1,9 +1,12 @@
 <script lang="ts">
 	import '../app.scss';
+	import * as gpx from '../utils/gpx_schema';
 	import { readGPXFromFile } from '../utils/GPXLoader';
-	let gpxFile: String;
-	let setGPXFile = (f: string) => {
-		gpxFile = f;
+
+	let gpxFile: gpx.document;
+	let setGPXFile = (f: gpx.document | null) => {
+		if (f) gpxFile = f;
+		console.log('loaded gpx file:', gpxFile);
 	};
 </script>
 
