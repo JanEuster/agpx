@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import '../app.scss';
+	import { readGPXFromFile } from '../utils/GPXLoader';
+	let gpxFile: String;
+	let setGPXFile = (f: string) => {
+		gpxFile = f;
+	};
+</script>
+
+<h1>Analyze GPX</h1>
+<label for="">Load GPX File</label>
+<input type="file" accept=".gpx" on:change={(e) => readGPXFromFile(e, setGPXFile)} />
+{gpxFile}
