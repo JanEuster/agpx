@@ -45,6 +45,7 @@
 	$: {
 		console.log(selected, points[selected]);
 		selectedMarker.setLatLng(points[selected]);
+		map?.setView(points[selected], 16);
 	}
 </script>
 
