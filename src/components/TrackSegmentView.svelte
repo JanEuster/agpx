@@ -56,8 +56,10 @@
 	<div class="selected-point">
 		{#if trkseg.trkpt}
 			<ul>
+				<li><small>[index] -</small> {selected}</li>
+				<br />
 				{#each Object.entries(trkseg.trkpt[selected]) as attr, i}
-					<li>{i} - {attr[0]}: {attr[1]}</li>
+					<li><small>[{i + 1}] -</small> {attr[0]}: {attr[1]}</li>
 				{/each}
 			</ul>
 		{/if}
