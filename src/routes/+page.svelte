@@ -1,14 +1,16 @@
 <script lang="ts">
 	import '../app.scss';
 	import * as gpx from '../utils/gpx_schema';
-	import L from 'leaflet';
 	import { readGPXFromFile } from '../utils/GPXLoader';
 	import TrackSegmentView from '../components/TrackSegmentView.svelte';
 
-	let gpxFile: gpx.document;
+	let gpxFile: gpx.document | null;
 	let setGPXFile = (f: gpx.document | null) => {
-		if (f) gpxFile = f;
-		console.log('loaded gpx file:', gpxFile);
+		gpxFile = null;
+		setTimeout(() => {
+			if (f) gpxFile = f;
+			console.log('loaded gpx file:', gpxFile);
+		}, 100);
 	};
 </script>
 
