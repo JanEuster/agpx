@@ -2,7 +2,7 @@
 	import '../app.scss';
 	import * as gpx from '../utils/gpx_schema';
 	import { readGPXFromFile } from '../utils/GPXLoader';
-	import TrackSegmentView from '../components/TrackSegmentView.svelte';
+	import TrackView from '../components/TrackView.svelte';
 
 	let gpxFile: gpx.document | null;
 	let setGPXFile = (f: gpx.document | null) => {
@@ -14,7 +14,7 @@
 	};
 </script>
 
-<div style="padding: 10px;">
+<div style="padding: 10px 30px; max-width: 1600px; margin: auto;">
 	<h1>Analyze GPX</h1>
 	<label for="file-input">Load GPX File</label>
 	<input
@@ -27,7 +27,7 @@
 		{#each gpxFile.gpx.trk as trk}
 			{#if trk.trkseg}
 				{#each trk.trkseg as trkseg}
-					<TrackSegmentView {trkseg} />
+					<TrackView {trkseg} />
 				{/each}
 			{/if}
 		{/each}

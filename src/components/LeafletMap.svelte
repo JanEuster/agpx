@@ -23,11 +23,12 @@
 
 	export let points: L.LatLngExpression[];
 	export let selected: number = 0;
+	let generatedId = 'leaflet_map_' + Math.round(Math.random() * 10000);
 	let map: L.Map | null = null;
 	let selectedMarker = L.circleMarker([0, 0], selectedMarkerOptions);
 
 	onMount(() => {
-		map = L.map('map').setView(points[0], 13);
+		map = L.map(generatedId).setView(points[0], 13);
 		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution:
 				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -49,7 +50,7 @@
 	}
 </script>
 
-<div id="map" class="map" />
+<div id={generatedId} class="map" />
 
 <style lang="scss">
 	.map {
