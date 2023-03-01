@@ -59,7 +59,14 @@
 				<li><small>[index] -</small> {selected}</li>
 				<br />
 				{#each Object.entries(trkseg.trkpt[selected]) as attr, i}
-					<li><small>[{i + 1}] -</small> {attr[0]}: {attr[1]}</li>
+					{#if attr[0] == 'extensions'}
+						<li><small>[{i + 1}] -</small> {attr[0]}:</li>
+						{#each Object.entries(attr[1]) as ext}
+							<li><small>[{i + 1}] -</small> &nbsp;&nbsp;&nbsp;{ext[0]}: {ext[1]}</li>
+						{/each}
+					{:else}
+						<li><small>[{i + 1}] -</small> {attr[0]}: {attr[1]}</li>
+					{/if}
 				{/each}
 			</ul>
 		{/if}
