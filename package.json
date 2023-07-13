@@ -36,6 +36,7 @@
 		"detailed-xml-validator": "^1.0.0",
 		"fast-xml-parser": "^4.1.2",
 		"leaflet": "^1.9.3",
+		"maplibre-gl": "^3.2.0",
 		"sass": "^1.58.3",
 		"xml": "^1.0.1"
 	}

@@ -3,6 +3,7 @@
 	import * as gpx from '../utils/gpx_schema';
 	import { readGPXFromFile } from '../utils/GPXLoader';
 	import TrackView from '../components/TrackView.svelte';
+	import AnimationOverlay from '../components/AnimationOverlay.svelte';
 
 	let gpxFile: gpx.document | null;
 	let setGPXFile = (f: gpx.document | null) => {
@@ -17,6 +18,7 @@
 	};
 </script>
 
+<AnimationOverlay />
 <div style="padding: 10px 30px; max-width: 1600px; margin: auto;">
 	<h1>Analyze GPX</h1>
 	<label for="file-input">Load GPX File</label>
