@@ -12,6 +12,9 @@
 			console.log('loaded gpx file:', gpxFile);
 		}, 100);
 	};
+	let openAnimationEditor = (trk: gpx.trkType, segmentIndex: number) => {
+		let trkseg = trk.trkseg![segmentIndex];
+	};
 </script>
 
 <div style="padding: 10px 30px; max-width: 1600px; margin: auto;">
@@ -25,8 +28,17 @@
 	/>
 	{#if gpxFile && gpxFile.gpx.trk}
 		{#each gpxFile.gpx.trk as trk}
+			<br /><br /><br />
+			<h3>{trk.name ?? 'Untitled'}</h3>
+			{#if trk.link}
+				{#each trk.link as link}
+					<a href={link.href}>{link.text}</a>
+				{/each}
+			{/if}
+			<p>{trk.desc ?? ''}</p>
 			{#if trk.trkseg}
-				{#each trk.trkseg as trkseg}
+				{#each trk.trkseg as trkseg, segI}
+					<button on:click={openAnimationEditor(trk, segI)}>{'<Make Animation>'}</button>
 					<TrackView {trkseg} />
 				{/each}
 			{/if}
