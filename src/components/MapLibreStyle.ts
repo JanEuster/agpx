@@ -1092,1543 +1092,1543 @@ const style: maplibregl.StyleSpecification = {
 		// 	},
 		// 	filter: ['all']
 		// },
-		{
-			id: 'trail_yellow_casing_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(255, 249, 190, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 1.5],
-						[14, 2.2],
-						[18, 2.8]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				[
-					'in',
-					'symbol',
-					':yellow:::H6:white',
-					':yellow:black_pointer',
-					':yellow:blue_bar',
-					':yellow:blue_pointer',
-					':yellow:green_pointer',
-					':yellow_round:',
-					'GH',
-					'white::yellow_bar',
-					'white::yellow_x'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_yellow_casing',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': {
-					stops: [
-						[13, 1],
-						[14, 3]
-					]
-				}
-			},
-			paint: {
-				'line-color': {
-					stops: [
-						[11, 'rgba(244, 244, 227, 1)'],
-						[14, 'rgba(254, 249, 166, 1)']
-					]
-				},
-				'line-width': {
-					stops: [
-						[11, 2],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[14, 3],
-						[18, 4]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				['==', 'color', 'yellow'],
-				[
-					'!in',
-					'symbol',
-					'yellow:white:yellow_corner',
-					'yellow:white:yellow_circle',
-					'yellow:white:yellow_backslash'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_yellow',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': {
-					stops: [
-						[13, 1],
-						[14, 3]
-					]
-				}
-			},
-			paint: {
-				'line-color': 'rgba(255, 249, 69, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 1.5],
-						[14, 2.6],
-						[18, 3]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				['==', 'color', 'yellow'],
-				[
-					'!in',
-					'symbol',
-					'yellow:white:yellow_corner',
-					'yellow:white:yellow_circle',
-					'yellow:white:yellow_backslash',
-					':yellow:::H6:white',
-					':yellow:black_pointer',
-					':yellow:blue_bar',
-					':yellow:blue_pointer',
-					':yellow:green_pointer',
-					':yellow_round:',
-					'GH',
-					'white::yellow_bar',
-					'white::yellow_x'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_yellow_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(255, 249, 69, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[14, 0.5],
-						[16, 1.7]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				[
-					'in',
-					'symbol',
-					':yellow:::H6:white',
-					':yellow:black_pointer',
-					':yellow:blue_bar',
-					':yellow:blue_pointer',
-					':yellow:green_pointer',
-					':yellow_round:',
-					'GH',
-					'white::yellow_bar',
-					'white::yellow_x'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_green_casing',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -1.5],
-						[14, -2.2],
-						[18, -2.8]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				['==', 'color', 'green'],
-				[
-					'!in',
-					'symbol',
-					'green:white:green_corner',
-					'green:white:green_circle',
-					'green:white:green_backslash'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_green_casing_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -1.5],
-						[14, -2.2],
-						[18, -2.8]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				['in', 'symbol', '#8EBE5F:#8EBE5F:#8EBE5F:R3:black', ':green:', ':green:::H7:white']
-			]
-		},
-		{
-			id: 'trail_green',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(86, 162, 33, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -1.5],
-						[14, -2.2],
-						[18, -5]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				['==', 'color', 'green'],
-				[
-					'!in',
-					'symbol',
-					'green:white:green_corner',
-					'green:white:green_circle',
-					'green:white:green_backslash'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_green_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(86, 162, 33, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -1.5],
-						[14, -2.2],
-						[18, -2.8]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				['in', 'symbol', '#8EBE5F:#8EBE5F:#8EBE5F:R3:black', ':green:', ':green:::H7:white']
-			]
-		},
-		{
-			id: 'trail_blue_casing',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 2],
-						[14, 4],
-						[18, 5.6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				['==', 'color', 'blue'],
-				[
-					'!in',
-					'symbol',
-					'blue:white:blue_corner',
-					'blue:white:blue_circle',
-					'blue:white:blue_backslash'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_blue_casing_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 2],
-						[14, 4],
-						[18, 5.6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				[
-					'in',
-					'symbol',
-					'#40E0D0',
-					':blue:::H4:white',
-					'blu:blu:white_bar :F7:black',
-					'blu:blu:white_bar :IT37:black',
-					'blu:blue:yellow_bar:2:black',
-					'darkblue:white:darkblue_stripe',
-					'light_blu:light_blu::1:white',
-					'light_blue:white:blue_triangle',
-					'white::blue_bar',
-					'white::blue_dot'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_blue_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(40, 108, 218, 1)',
-				'line-width': {
-					stops: [
-						[14, 1],
-						[18, 2.2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 2],
-						[14, 4],
-						[18, 5.6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				[
-					'in',
-					'symbol',
-					'#40E0D0',
-					':blue:::H4:white',
-					'blu:blu:white_bar :F7:black',
-					'blu:blu:white_bar :IT37:black',
-					'blu:blue:yellow_bar:2:black',
-					'darkblue:white:darkblue_stripe',
-					'light_blu:light_blu::1:white',
-					'light_blue:white:blue_triangle',
-					'white::blue_bar',
-					'white::blue_dot'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_blue',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': {
-					stops: [
-						[11, 2],
-						[14, 3]
-					]
-				},
-				'line-round-limit': 1.05
-			},
-			paint: {
-				'line-color': 'rgba(40, 108, 218, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 2],
-						[14, 4],
-						[18, 5.6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				['==', 'color', 'blue'],
-				[
-					'!in',
-					'symbol',
-					'blue:white:blue_corner',
-					'blue:white:blue_circle',
-					'blue:white:blue_backslash'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_brown_casing',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -2],
-						[14, -4],
-						[18, -5.6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['==', 'color', 'brown'], ['!in', 'class', 'ski', 'horse']]
-		},
-		{
-			id: 'trail_brown_casing_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': 4,
-				'line-offset': {
-					stops: [
-						[10, -2],
-						[14, -4],
-						[18, -5.6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['in', 'symbol', ':brown::Klangweg:white', 'white::brown_hiker']]
-		},
-		{
-			id: 'trail_brown',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(146, 99, 64, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -2],
-						[14, -4],
-						[18, -5.6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['==', 'color', 'brown'], ['!in', 'class', 'ski', 'horse']]
-		},
-		{
-			id: 'trail_brown_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(146, 99, 64, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -2],
-						[14, -4],
-						[18, -5.6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['in', 'symbol', ':brown::Klangweg:white', 'white::brown_hiker']]
-		},
-		{
-			id: 'trail_black_casing_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -2.3],
-						[14, -4.3],
-						[18, -6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				[
-					'in',
-					'symbol',
-					':::VO:white',
-					':white:::H3:white',
-					'aqua:aqua:white_bar:PLB:black',
-					'black',
-					'black::ammonit',
-					'black::black_cross',
-					'black::black_dot',
-					'black::white_dot',
-					'black:white: :1:black',
-					'black:white: :2:black',
-					'black:white: :3:black',
-					'black:white: :4:black',
-					'black:white: :5:black',
-					'black:white: :6:black',
-					'black:white:10:black',
-					'black:white:37:black',
-					'black:white:::H:black',
-					'black:white:::STW:black',
-					'black:white:::T:black',
-					'black:white:::WDS:black',
-					'black:white::DW:blue',
-					'black:white::HZW',
-					'black:white::ITH:black',
-					'black:white::KKS:black',
-					'black:white::Max:black',
-					'black:white::RW:black',
-					'black:white::SGH:black',
-					'black:white::T:black',
-					'black:white::VDzD:black',
-					'black:white::Wi:black',
-					'black:white:AW:black',
-					'black:white:BgD:black',
-					'black:white:GRS:black',
-					'black:white:Glw:black',
-					'black:white:LES:black',
-					'black:white:W11:black',
-					'black:white:ammonit',
-					'black:white:black_cross',
-					'black:white:black_dot',
-					'black:white:black_dot::WHW:black',
-					'black:white:black_frame:GT:black',
-					'black:white:black_rectangle',
-					'black:white:hiker',
-					'black:white:nordic_walking',
-					'black:white:tower',
-					'black:white:white:1:black',
-					'black:white:white:2:black',
-					'black:white:white:3:black',
-					'black:white_circle: :1:white',
-					'black:white_circle: :2:white',
-					'black:white_circle: :3:white',
-					'black:white_round:blue_circle',
-					'gray:black_circle:black_triangle',
-					'gray:white',
-					'white',
-					'white::white_diamond',
-					'white::white_dot',
-					'white::white_pointer',
-					'white:hiker',
-					'white:tower:black',
-					'white:white::8',
-					'white:white::8:black',
-					'white:white::C1:black',
-					'white:white::D:red',
-					'white:white::N:blue',
-					'white:white::R1:red',
-					'white:white:GWW:black',
-					'white:white:L17:red',
-					'white:white:L18:red',
-					'white:white:L19:red',
-					'white:white:W11:blue',
-					'white:white:W12:blue',
-					'white:white:black_dot',
-					'white:white:black_pointer',
-					'white:white:hiker',
-					'white:white:hiker:black',
-					'white:white:hiker:black::',
-					'white:white_round::W:black'
-				]
-			]
-		},
-		{
-			id: 'trail_black_casing',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -2.3],
-						[14, -4.3],
-						[18, -6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['==', 'color', 'black'], ['!in', 'class', 'ski', 'horse']]
-		},
-		{
-			id: 'trail_black',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(47, 47, 47, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -2.3],
-						[14, -4.3],
-						[18, -6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['==', 'color', 'black'], ['!in', 'class', 'ski', 'horse']]
-		},
-		{
-			id: 'trail_black_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(47, 47, 47, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, -2.3],
-						[14, -4.3],
-						[18, -6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				[
-					'in',
-					'symbol',
-					':::VO:white',
-					':white:::H3:white',
-					'aqua:aqua:white_bar:PLB:black',
-					'black',
-					'black::ammonit',
-					'black::black_cross',
-					'black::black_dot',
-					'black::white_dot',
-					'black:white: :1:black',
-					'black:white: :2:black',
-					'black:white: :3:black',
-					'black:white: :4:black',
-					'black:white: :5:black',
-					'black:white: :6:black',
-					'black:white:10:black',
-					'black:white:37:black',
-					'black:white:::H:black',
-					'black:white:::STW:black',
-					'black:white:::T:black',
-					'black:white:::WDS:black',
-					'black:white::DW:blue',
-					'black:white::HZW',
-					'black:white::ITH:black',
-					'black:white::KKS:black',
-					'black:white::Max:black',
-					'black:white::RW:black',
-					'black:white::SGH:black',
-					'black:white::T:black',
-					'black:white::VDzD:black',
-					'black:white::Wi:black',
-					'black:white:AW:black',
-					'black:white:BgD:black',
-					'black:white:GRS:black',
-					'black:white:Glw:black',
-					'black:white:LES:black',
-					'black:white:W11:black',
-					'black:white:ammonit',
-					'black:white:black_cross',
-					'black:white:black_dot',
-					'black:white:black_dot::WHW:black',
-					'black:white:black_frame:GT:black',
-					'black:white:black_rectangle',
-					'black:white:hiker',
-					'black:white:nordic_walking',
-					'black:white:tower',
-					'black:white:white:1:black',
-					'black:white:white:2:black',
-					'black:white:white:3:black',
-					'black:white_circle: :1:white',
-					'black:white_circle: :2:white',
-					'black:white_circle: :3:white',
-					'black:white_round:blue_circle',
-					'gray:black_circle:black_triangle',
-					'gray:white',
-					'white',
-					'white::white_diamond',
-					'white::white_dot',
-					'white::white_pointer',
-					'white:hiker',
-					'white:tower:black',
-					'white:white::8',
-					'white:white::8:black',
-					'white:white::C1:black',
-					'white:white::D:red',
-					'white:white::N:blue',
-					'white:white::R1:red',
-					'white:white:GWW:black',
-					'white:white:L17:red',
-					'white:white:L18:red',
-					'white:white:L19:red',
-					'white:white:W11:blue',
-					'white:white:W12:blue',
-					'white:white:black_dot',
-					'white:white:black_pointer',
-					'white:white:hiker',
-					'white:white:hiker:black',
-					'white:white:hiker:black::',
-					'white:white_round::W:black'
-				]
-			]
-		},
-		{
-			id: 'trail_purple_casing',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 2.3],
-						[14, 4.3],
-						[18, 6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['==', 'color', 'purple'], ['!in', 'class', 'ski', 'horse']]
-		},
-		{
-			id: 'trail_purple_casing_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 2.3],
-						[14, 4.3],
-						[18, 6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['in', 'symbol', '#E8ADAA', ':purple:::H2:white']]
-		},
-		{
-			id: 'trail_purple',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': {
-					stops: [
-						[11, 8],
-						[14, 3]
-					]
-				}
-			},
-			paint: {
-				'line-color': 'rgba(176, 83, 220, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 2.3],
-						[14, 4.3],
-						[18, 6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['==', 'color', 'purple'], ['!in', 'class', 'ski', 'horse']]
-		},
-		{
-			id: 'trail_purple_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(176, 83, 220, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 2.3],
-						[14, 4.3],
-						[18, 6]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['in', 'symbol', '#E8ADAA', ':purple:::H2:white']]
-		},
-		{
-			id: 'trail_orange_casing',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 3],
-						[14, 5],
-						[18, 7]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['==', 'color', 'orange'], ['!in', 'class', 'ski', 'horse']]
-		},
-		{
-			id: 'trail_orange_casing_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 3],
-						[14, 5],
-						[18, 7]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['==', 'color', 'orange'], ['!in', 'class', 'ski', 'horse']]
-		},
-		{
-			id: 'trail_orange',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': {
-					stops: [
-						[11, 8],
-						[12, 12],
-						[13, 16],
-						[14, 3]
-					]
-				}
-			},
-			paint: {
-				'line-color': 'rgba(224, 155, 61, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': {
-					stops: [
-						[10, 3],
-						[14, 5],
-						[18, 7]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['==', 'color', 'orange'], ['!in', 'class', 'ski', 'horse']]
-		},
-		{
-			id: 'trail_orange_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(224, 155, 61, 1)',
-				'line-width': 2,
-				'line-offset': {
-					stops: [
-						[10, 3],
-						[14, 5],
-						[18, 7]
-					]
-				},
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				[
-					'in',
-					'symbol',
-					':orange:::H5:white',
-					':orange:blue_lower:::',
-					':white:orange_bar:blue_dot::',
-					'white::orange_fork'
-				]
-			]
-		},
-		{
-			id: 'trail_red_casing',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			maxzoom: 24,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				}
-			},
-			filter: ['all', ['==', 'color', 'red'], ['!in', 'class', 'ski', 'horse']]
-		},
-		{
-			id: 'trail_red_casing_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(253, 252, 252, 1)',
-				'line-width': {
-					base: 1,
-					stops: [
-						[11, 3],
-						[14, 4]
-					]
-				},
-				'line-offset': 0,
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				[
-					'in',
-					'symbol',
-					'red:red:white_bar:431:black',
-					'red:red:white_bar:458:black',
-					':red:::H1:white',
-					'Giswil - Stalden',
-					'RWW',
-					'Raute mit silbernem Kreuz auf blauem Grund',
-					'Tauplitz Wanderweg 209',
-					'Tschierweg-Alexanderhütte-Millstätter Hütte-Millstätter Törl- Nöhringsattel-Thomanbauerhütte-Langnock'
-				]
-			]
-		},
-		{
-			id: 'trail_red_extra',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 13,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-color': 'rgba(205, 35, 2, 1)',
-				'line-width': {
-					base: 1,
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': 0,
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				[
-					'in',
-					'symbol',
-					'ed:red:white_bar:431:black',
-					'red:red:white_bar:458:black',
-					':red:::H1:white',
-					'Giswil - Stalden',
-					'RWW',
-					'Raute mit silbernem Kreuz auf blauem Grund',
-					'Tauplitz Wanderweg 209',
-					'Tschierweg-Alexanderhütte-Millstätter Hütte-Millstätter Törl- Nöhringsattel-Thomanbauerhütte-Langnock'
-				]
-			]
-		},
-		{
-			id: 'trail_red',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 11,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'miter',
-				visibility: 'visible',
-				'line-miter-limit': {
-					stops: [
-						[13, 1],
-						[14, 3]
-					]
-				}
-			},
-			paint: {
-				'line-color': 'rgba(205, 35, 2, 1)',
-				'line-width': {
-					stops: [
-						[11, 1],
-						[14, 2]
-					]
-				},
-				'line-offset': 0,
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: [
-				'all',
-				['==', 'color', 'red'],
-				[
-					'!in',
-					'symbol',
-					'red:white:red_corner',
-					'red:white:red_circle',
-					'red:white:red_backslash'
-				],
-				['!in', 'class', 'ski', 'horse']
-			]
-		},
-		{
-			id: 'trail_longdistance_casing',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 6,
-			maxzoom: 24,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'round',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-blur': {
-					stops: [
-						[6, 0.6],
-						[10, 0.4]
-					]
-				},
-				'line-color': 'rgba(255, 255, 255, 1)',
-				'line-width': {
-					stops: [
-						[6, 1],
-						[11, 1.4],
-						[15, 4],
-						[18, 6]
-					]
-				},
-				'line-offset': 0
-			},
-			filter: ['all', ['in', 'network', 'iwn', 'nwn'], ['has', 'ref']]
-		},
-		{
-			id: 'trail_longdistance',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 6,
-			maxzoom: 24,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'round',
-				visibility: 'visible',
-				'line-miter-limit': 3
-			},
-			paint: {
-				'line-blur': {
-					stops: [
-						[6, 0.6],
-						[10, 0.4],
-						[14, 0]
-					]
-				},
-				'line-color': {
-					stops: [
-						[6, 'rgba(255, 51, 10, 1)'],
-						[14, 'rgba(205, 35, 2, 1)']
-					]
-				},
-				'line-width': {
-					stops: [
-						[6, 0.8],
-						[11, 1],
-						[15, 2],
-						[18, 3]
-					]
-				},
-				'line-offset': 0
-			},
-			filter: ['all', ['in', 'network', 'iwn', 'nwn'], ['has', 'ref']]
-		},
-		{
-			id: 'viaferrata_casing',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 14,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'round',
-				visibility: 'visible'
-			},
-			paint: {
-				'line-color': 'rgba(205, 35, 2, 1)',
-				'line-width': {
-					base: 1,
-					stops: [
-						[14, 0.8],
-						[18, 1.6]
-					]
-				},
-				'line-offset': 0,
-				'line-opacity': 1
-			},
-			metadata: {},
-			filter: ['all', ['==', 'class', 'via_ferrata']]
-		},
-		{
-			id: 'viaferrata',
-			type: 'line',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 14,
-			layout: {
-				'line-cap': 'round',
-				'line-join': 'round',
-				visibility: 'visible'
-			},
-			paint: {
-				'line-color': 'rgba(255, 255, 255, 1)',
-				'line-width': {
-					base: 1,
-					stops: [
-						[14, 1.2],
-						[18, 3.2]
-					]
-				},
-				'line-offset': 0,
-				'line-opacity': 1,
-				'line-dasharray': [0.5, 2]
-			},
-			metadata: {},
-			filter: ['all', ['==', 'class', 'via_ferrata']]
-		},
-		{
-			id: 'viaferrata_symbol',
-			type: 'symbol',
-			source: 'outdoor',
-			'source-layer': 'trail',
-			minzoom: 17,
-			layout: {
-				'text-font': ['Open Sans Bold', 'Noto Sans Bold'],
-				'text-size': 16,
-				'text-field': '.',
-				visibility: 'visible',
-				'icon-anchor': 'bottom',
-				'symbol-spacing': 20,
-				'symbol-placement': 'line'
-			},
-			paint: {
-				'text-color': 'rgba(205, 35, 2, 1)',
-				'text-halo-color': 'rgba(255, 255, 255, 1)',
-				'text-halo-width': 1
-			},
-			filter: ['all', ['==', 'class', 'via_ferrata']]
-		},
+		// {
+		// 	id: 'trail_yellow_casing_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(255, 249, 190, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 1.5],
+		// 				[14, 2.2],
+		// 				[18, 2.8]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		[
+		// 			'in',
+		// 			'symbol',
+		// 			':yellow:::H6:white',
+		// 			':yellow:black_pointer',
+		// 			':yellow:blue_bar',
+		// 			':yellow:blue_pointer',
+		// 			':yellow:green_pointer',
+		// 			':yellow_round:',
+		// 			'GH',
+		// 			'white::yellow_bar',
+		// 			'white::yellow_x'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_yellow_casing',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': {
+		// 			stops: [
+		// 				[13, 1],
+		// 				[14, 3]
+		// 			]
+		// 		}
+		// 	},
+		// 	paint: {
+		// 		'line-color': {
+		// 			stops: [
+		// 				[11, 'rgba(244, 244, 227, 1)'],
+		// 				[14, 'rgba(254, 249, 166, 1)']
+		// 			]
+		// 		},
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 2],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[14, 3],
+		// 				[18, 4]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		['==', 'color', 'yellow'],
+		// 		[
+		// 			'!in',
+		// 			'symbol',
+		// 			'yellow:white:yellow_corner',
+		// 			'yellow:white:yellow_circle',
+		// 			'yellow:white:yellow_backslash'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_yellow',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': {
+		// 			stops: [
+		// 				[13, 1],
+		// 				[14, 3]
+		// 			]
+		// 		}
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(255, 249, 69, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 1.5],
+		// 				[14, 2.6],
+		// 				[18, 3]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		['==', 'color', 'yellow'],
+		// 		[
+		// 			'!in',
+		// 			'symbol',
+		// 			'yellow:white:yellow_corner',
+		// 			'yellow:white:yellow_circle',
+		// 			'yellow:white:yellow_backslash',
+		// 			':yellow:::H6:white',
+		// 			':yellow:black_pointer',
+		// 			':yellow:blue_bar',
+		// 			':yellow:blue_pointer',
+		// 			':yellow:green_pointer',
+		// 			':yellow_round:',
+		// 			'GH',
+		// 			'white::yellow_bar',
+		// 			'white::yellow_x'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_yellow_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(255, 249, 69, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[14, 0.5],
+		// 				[16, 1.7]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		[
+		// 			'in',
+		// 			'symbol',
+		// 			':yellow:::H6:white',
+		// 			':yellow:black_pointer',
+		// 			':yellow:blue_bar',
+		// 			':yellow:blue_pointer',
+		// 			':yellow:green_pointer',
+		// 			':yellow_round:',
+		// 			'GH',
+		// 			'white::yellow_bar',
+		// 			'white::yellow_x'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_green_casing',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -1.5],
+		// 				[14, -2.2],
+		// 				[18, -2.8]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		['==', 'color', 'green'],
+		// 		[
+		// 			'!in',
+		// 			'symbol',
+		// 			'green:white:green_corner',
+		// 			'green:white:green_circle',
+		// 			'green:white:green_backslash'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_green_casing_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -1.5],
+		// 				[14, -2.2],
+		// 				[18, -2.8]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		['in', 'symbol', '#8EBE5F:#8EBE5F:#8EBE5F:R3:black', ':green:', ':green:::H7:white']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_green',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(86, 162, 33, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -1.5],
+		// 				[14, -2.2],
+		// 				[18, -5]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		['==', 'color', 'green'],
+		// 		[
+		// 			'!in',
+		// 			'symbol',
+		// 			'green:white:green_corner',
+		// 			'green:white:green_circle',
+		// 			'green:white:green_backslash'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_green_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(86, 162, 33, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -1.5],
+		// 				[14, -2.2],
+		// 				[18, -2.8]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		['in', 'symbol', '#8EBE5F:#8EBE5F:#8EBE5F:R3:black', ':green:', ':green:::H7:white']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_blue_casing',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 2],
+		// 				[14, 4],
+		// 				[18, 5.6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		['==', 'color', 'blue'],
+		// 		[
+		// 			'!in',
+		// 			'symbol',
+		// 			'blue:white:blue_corner',
+		// 			'blue:white:blue_circle',
+		// 			'blue:white:blue_backslash'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_blue_casing_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 2],
+		// 				[14, 4],
+		// 				[18, 5.6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		[
+		// 			'in',
+		// 			'symbol',
+		// 			'#40E0D0',
+		// 			':blue:::H4:white',
+		// 			'blu:blu:white_bar :F7:black',
+		// 			'blu:blu:white_bar :IT37:black',
+		// 			'blu:blue:yellow_bar:2:black',
+		// 			'darkblue:white:darkblue_stripe',
+		// 			'light_blu:light_blu::1:white',
+		// 			'light_blue:white:blue_triangle',
+		// 			'white::blue_bar',
+		// 			'white::blue_dot'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_blue_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(40, 108, 218, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[14, 1],
+		// 				[18, 2.2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 2],
+		// 				[14, 4],
+		// 				[18, 5.6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		[
+		// 			'in',
+		// 			'symbol',
+		// 			'#40E0D0',
+		// 			':blue:::H4:white',
+		// 			'blu:blu:white_bar :F7:black',
+		// 			'blu:blu:white_bar :IT37:black',
+		// 			'blu:blue:yellow_bar:2:black',
+		// 			'darkblue:white:darkblue_stripe',
+		// 			'light_blu:light_blu::1:white',
+		// 			'light_blue:white:blue_triangle',
+		// 			'white::blue_bar',
+		// 			'white::blue_dot'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_blue',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': {
+		// 			stops: [
+		// 				[11, 2],
+		// 				[14, 3]
+		// 			]
+		// 		},
+		// 		'line-round-limit': 1.05
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(40, 108, 218, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 2],
+		// 				[14, 4],
+		// 				[18, 5.6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		['==', 'color', 'blue'],
+		// 		[
+		// 			'!in',
+		// 			'symbol',
+		// 			'blue:white:blue_corner',
+		// 			'blue:white:blue_circle',
+		// 			'blue:white:blue_backslash'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_brown_casing',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -2],
+		// 				[14, -4],
+		// 				[18, -5.6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'color', 'brown'], ['!in', 'class', 'ski', 'horse']]
+		// },
+		// {
+		// 	id: 'trail_brown_casing_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': 4,
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -2],
+		// 				[14, -4],
+		// 				[18, -5.6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['in', 'symbol', ':brown::Klangweg:white', 'white::brown_hiker']]
+		// },
+		// {
+		// 	id: 'trail_brown',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(146, 99, 64, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -2],
+		// 				[14, -4],
+		// 				[18, -5.6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'color', 'brown'], ['!in', 'class', 'ski', 'horse']]
+		// },
+		// {
+		// 	id: 'trail_brown_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(146, 99, 64, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -2],
+		// 				[14, -4],
+		// 				[18, -5.6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['in', 'symbol', ':brown::Klangweg:white', 'white::brown_hiker']]
+		// },
+		// {
+		// 	id: 'trail_black_casing_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -2.3],
+		// 				[14, -4.3],
+		// 				[18, -6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		[
+		// 			'in',
+		// 			'symbol',
+		// 			':::VO:white',
+		// 			':white:::H3:white',
+		// 			'aqua:aqua:white_bar:PLB:black',
+		// 			'black',
+		// 			'black::ammonit',
+		// 			'black::black_cross',
+		// 			'black::black_dot',
+		// 			'black::white_dot',
+		// 			'black:white: :1:black',
+		// 			'black:white: :2:black',
+		// 			'black:white: :3:black',
+		// 			'black:white: :4:black',
+		// 			'black:white: :5:black',
+		// 			'black:white: :6:black',
+		// 			'black:white:10:black',
+		// 			'black:white:37:black',
+		// 			'black:white:::H:black',
+		// 			'black:white:::STW:black',
+		// 			'black:white:::T:black',
+		// 			'black:white:::WDS:black',
+		// 			'black:white::DW:blue',
+		// 			'black:white::HZW',
+		// 			'black:white::ITH:black',
+		// 			'black:white::KKS:black',
+		// 			'black:white::Max:black',
+		// 			'black:white::RW:black',
+		// 			'black:white::SGH:black',
+		// 			'black:white::T:black',
+		// 			'black:white::VDzD:black',
+		// 			'black:white::Wi:black',
+		// 			'black:white:AW:black',
+		// 			'black:white:BgD:black',
+		// 			'black:white:GRS:black',
+		// 			'black:white:Glw:black',
+		// 			'black:white:LES:black',
+		// 			'black:white:W11:black',
+		// 			'black:white:ammonit',
+		// 			'black:white:black_cross',
+		// 			'black:white:black_dot',
+		// 			'black:white:black_dot::WHW:black',
+		// 			'black:white:black_frame:GT:black',
+		// 			'black:white:black_rectangle',
+		// 			'black:white:hiker',
+		// 			'black:white:nordic_walking',
+		// 			'black:white:tower',
+		// 			'black:white:white:1:black',
+		// 			'black:white:white:2:black',
+		// 			'black:white:white:3:black',
+		// 			'black:white_circle: :1:white',
+		// 			'black:white_circle: :2:white',
+		// 			'black:white_circle: :3:white',
+		// 			'black:white_round:blue_circle',
+		// 			'gray:black_circle:black_triangle',
+		// 			'gray:white',
+		// 			'white',
+		// 			'white::white_diamond',
+		// 			'white::white_dot',
+		// 			'white::white_pointer',
+		// 			'white:hiker',
+		// 			'white:tower:black',
+		// 			'white:white::8',
+		// 			'white:white::8:black',
+		// 			'white:white::C1:black',
+		// 			'white:white::D:red',
+		// 			'white:white::N:blue',
+		// 			'white:white::R1:red',
+		// 			'white:white:GWW:black',
+		// 			'white:white:L17:red',
+		// 			'white:white:L18:red',
+		// 			'white:white:L19:red',
+		// 			'white:white:W11:blue',
+		// 			'white:white:W12:blue',
+		// 			'white:white:black_dot',
+		// 			'white:white:black_pointer',
+		// 			'white:white:hiker',
+		// 			'white:white:hiker:black',
+		// 			'white:white:hiker:black::',
+		// 			'white:white_round::W:black'
+		// 		]
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_black_casing',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -2.3],
+		// 				[14, -4.3],
+		// 				[18, -6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'color', 'black'], ['!in', 'class', 'ski', 'horse']]
+		// },
+		// {
+		// 	id: 'trail_black',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(47, 47, 47, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -2.3],
+		// 				[14, -4.3],
+		// 				[18, -6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'color', 'black'], ['!in', 'class', 'ski', 'horse']]
+		// },
+		// {
+		// 	id: 'trail_black_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(47, 47, 47, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, -2.3],
+		// 				[14, -4.3],
+		// 				[18, -6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		[
+		// 			'in',
+		// 			'symbol',
+		// 			':::VO:white',
+		// 			':white:::H3:white',
+		// 			'aqua:aqua:white_bar:PLB:black',
+		// 			'black',
+		// 			'black::ammonit',
+		// 			'black::black_cross',
+		// 			'black::black_dot',
+		// 			'black::white_dot',
+		// 			'black:white: :1:black',
+		// 			'black:white: :2:black',
+		// 			'black:white: :3:black',
+		// 			'black:white: :4:black',
+		// 			'black:white: :5:black',
+		// 			'black:white: :6:black',
+		// 			'black:white:10:black',
+		// 			'black:white:37:black',
+		// 			'black:white:::H:black',
+		// 			'black:white:::STW:black',
+		// 			'black:white:::T:black',
+		// 			'black:white:::WDS:black',
+		// 			'black:white::DW:blue',
+		// 			'black:white::HZW',
+		// 			'black:white::ITH:black',
+		// 			'black:white::KKS:black',
+		// 			'black:white::Max:black',
+		// 			'black:white::RW:black',
+		// 			'black:white::SGH:black',
+		// 			'black:white::T:black',
+		// 			'black:white::VDzD:black',
+		// 			'black:white::Wi:black',
+		// 			'black:white:AW:black',
+		// 			'black:white:BgD:black',
+		// 			'black:white:GRS:black',
+		// 			'black:white:Glw:black',
+		// 			'black:white:LES:black',
+		// 			'black:white:W11:black',
+		// 			'black:white:ammonit',
+		// 			'black:white:black_cross',
+		// 			'black:white:black_dot',
+		// 			'black:white:black_dot::WHW:black',
+		// 			'black:white:black_frame:GT:black',
+		// 			'black:white:black_rectangle',
+		// 			'black:white:hiker',
+		// 			'black:white:nordic_walking',
+		// 			'black:white:tower',
+		// 			'black:white:white:1:black',
+		// 			'black:white:white:2:black',
+		// 			'black:white:white:3:black',
+		// 			'black:white_circle: :1:white',
+		// 			'black:white_circle: :2:white',
+		// 			'black:white_circle: :3:white',
+		// 			'black:white_round:blue_circle',
+		// 			'gray:black_circle:black_triangle',
+		// 			'gray:white',
+		// 			'white',
+		// 			'white::white_diamond',
+		// 			'white::white_dot',
+		// 			'white::white_pointer',
+		// 			'white:hiker',
+		// 			'white:tower:black',
+		// 			'white:white::8',
+		// 			'white:white::8:black',
+		// 			'white:white::C1:black',
+		// 			'white:white::D:red',
+		// 			'white:white::N:blue',
+		// 			'white:white::R1:red',
+		// 			'white:white:GWW:black',
+		// 			'white:white:L17:red',
+		// 			'white:white:L18:red',
+		// 			'white:white:L19:red',
+		// 			'white:white:W11:blue',
+		// 			'white:white:W12:blue',
+		// 			'white:white:black_dot',
+		// 			'white:white:black_pointer',
+		// 			'white:white:hiker',
+		// 			'white:white:hiker:black',
+		// 			'white:white:hiker:black::',
+		// 			'white:white_round::W:black'
+		// 		]
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_purple_casing',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 2.3],
+		// 				[14, 4.3],
+		// 				[18, 6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'color', 'purple'], ['!in', 'class', 'ski', 'horse']]
+		// },
+		// {
+		// 	id: 'trail_purple_casing_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 2.3],
+		// 				[14, 4.3],
+		// 				[18, 6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['in', 'symbol', '#E8ADAA', ':purple:::H2:white']]
+		// },
+		// {
+		// 	id: 'trail_purple',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': {
+		// 			stops: [
+		// 				[11, 8],
+		// 				[14, 3]
+		// 			]
+		// 		}
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(176, 83, 220, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 2.3],
+		// 				[14, 4.3],
+		// 				[18, 6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'color', 'purple'], ['!in', 'class', 'ski', 'horse']]
+		// },
+		// {
+		// 	id: 'trail_purple_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(176, 83, 220, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 2.3],
+		// 				[14, 4.3],
+		// 				[18, 6]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['in', 'symbol', '#E8ADAA', ':purple:::H2:white']]
+		// },
+		// {
+		// 	id: 'trail_orange_casing',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 3],
+		// 				[14, 5],
+		// 				[18, 7]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'color', 'orange'], ['!in', 'class', 'ski', 'horse']]
+		// },
+		// {
+		// 	id: 'trail_orange_casing_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 3],
+		// 				[14, 5],
+		// 				[18, 7]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'color', 'orange'], ['!in', 'class', 'ski', 'horse']]
+		// },
+		// {
+		// 	id: 'trail_orange',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': {
+		// 			stops: [
+		// 				[11, 8],
+		// 				[12, 12],
+		// 				[13, 16],
+		// 				[14, 3]
+		// 			]
+		// 		}
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(224, 155, 61, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 3],
+		// 				[14, 5],
+		// 				[18, 7]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'color', 'orange'], ['!in', 'class', 'ski', 'horse']]
+		// },
+		// {
+		// 	id: 'trail_orange_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(224, 155, 61, 1)',
+		// 		'line-width': 2,
+		// 		'line-offset': {
+		// 			stops: [
+		// 				[10, 3],
+		// 				[14, 5],
+		// 				[18, 7]
+		// 			]
+		// 		},
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		[
+		// 			'in',
+		// 			'symbol',
+		// 			':orange:::H5:white',
+		// 			':orange:blue_lower:::',
+		// 			':white:orange_bar:blue_dot::',
+		// 			'white::orange_fork'
+		// 		]
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_red_casing',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	maxzoom: 24,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		}
+		// 	},
+		// 	filter: ['all', ['==', 'color', 'red'], ['!in', 'class', 'ski', 'horse']]
+		// },
+		// {
+		// 	id: 'trail_red_casing_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(253, 252, 252, 1)',
+		// 		'line-width': {
+		// 			base: 1,
+		// 			stops: [
+		// 				[11, 3],
+		// 				[14, 4]
+		// 			]
+		// 		},
+		// 		'line-offset': 0,
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		[
+		// 			'in',
+		// 			'symbol',
+		// 			'red:red:white_bar:431:black',
+		// 			'red:red:white_bar:458:black',
+		// 			':red:::H1:white',
+		// 			'Giswil - Stalden',
+		// 			'RWW',
+		// 			'Raute mit silbernem Kreuz auf blauem Grund',
+		// 			'Tauplitz Wanderweg 209',
+		// 			'Tschierweg-Alexanderhütte-Millstätter Hütte-Millstätter Törl- Nöhringsattel-Thomanbauerhütte-Langnock'
+		// 		]
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_red_extra',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 13,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(205, 35, 2, 1)',
+		// 		'line-width': {
+		// 			base: 1,
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': 0,
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		[
+		// 			'in',
+		// 			'symbol',
+		// 			'ed:red:white_bar:431:black',
+		// 			'red:red:white_bar:458:black',
+		// 			':red:::H1:white',
+		// 			'Giswil - Stalden',
+		// 			'RWW',
+		// 			'Raute mit silbernem Kreuz auf blauem Grund',
+		// 			'Tauplitz Wanderweg 209',
+		// 			'Tschierweg-Alexanderhütte-Millstätter Hütte-Millstätter Törl- Nöhringsattel-Thomanbauerhütte-Langnock'
+		// 		]
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_red',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 11,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'miter',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': {
+		// 			stops: [
+		// 				[13, 1],
+		// 				[14, 3]
+		// 			]
+		// 		}
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(205, 35, 2, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[11, 1],
+		// 				[14, 2]
+		// 			]
+		// 		},
+		// 		'line-offset': 0,
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: [
+		// 		'all',
+		// 		['==', 'color', 'red'],
+		// 		[
+		// 			'!in',
+		// 			'symbol',
+		// 			'red:white:red_corner',
+		// 			'red:white:red_circle',
+		// 			'red:white:red_backslash'
+		// 		],
+		// 		['!in', 'class', 'ski', 'horse']
+		// 	]
+		// },
+		// {
+		// 	id: 'trail_longdistance_casing',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 6,
+		// 	maxzoom: 24,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'round',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-blur': {
+		// 			stops: [
+		// 				[6, 0.6],
+		// 				[10, 0.4]
+		// 			]
+		// 		},
+		// 		'line-color': 'rgba(255, 255, 255, 1)',
+		// 		'line-width': {
+		// 			stops: [
+		// 				[6, 1],
+		// 				[11, 1.4],
+		// 				[15, 4],
+		// 				[18, 6]
+		// 			]
+		// 		},
+		// 		'line-offset': 0
+		// 	},
+		// 	filter: ['all', ['in', 'network', 'iwn', 'nwn'], ['has', 'ref']]
+		// },
+		// {
+		// 	id: 'trail_longdistance',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 6,
+		// 	maxzoom: 24,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'round',
+		// 		visibility: 'visible',
+		// 		'line-miter-limit': 3
+		// 	},
+		// 	paint: {
+		// 		'line-blur': {
+		// 			stops: [
+		// 				[6, 0.6],
+		// 				[10, 0.4],
+		// 				[14, 0]
+		// 			]
+		// 		},
+		// 		'line-color': {
+		// 			stops: [
+		// 				[6, 'rgba(255, 51, 10, 1)'],
+		// 				[14, 'rgba(205, 35, 2, 1)']
+		// 			]
+		// 		},
+		// 		'line-width': {
+		// 			stops: [
+		// 				[6, 0.8],
+		// 				[11, 1],
+		// 				[15, 2],
+		// 				[18, 3]
+		// 			]
+		// 		},
+		// 		'line-offset': 0
+		// 	},
+		// 	filter: ['all', ['in', 'network', 'iwn', 'nwn'], ['has', 'ref']]
+		// },
+		// {
+		// 	id: 'viaferrata_casing',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 14,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'round',
+		// 		visibility: 'visible'
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(205, 35, 2, 1)',
+		// 		'line-width': {
+		// 			base: 1,
+		// 			stops: [
+		// 				[14, 0.8],
+		// 				[18, 1.6]
+		// 			]
+		// 		},
+		// 		'line-offset': 0,
+		// 		'line-opacity': 1
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'class', 'via_ferrata']]
+		// },
+		// {
+		// 	id: 'viaferrata',
+		// 	type: 'line',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 14,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		'line-join': 'round',
+		// 		visibility: 'visible'
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(255, 255, 255, 1)',
+		// 		'line-width': {
+		// 			base: 1,
+		// 			stops: [
+		// 				[14, 1.2],
+		// 				[18, 3.2]
+		// 			]
+		// 		},
+		// 		'line-offset': 0,
+		// 		'line-opacity': 1,
+		// 		'line-dasharray': [0.5, 2]
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', 'class', 'via_ferrata']]
+		// },
+		// {
+		// 	id: 'viaferrata_symbol',
+		// 	type: 'symbol',
+		// 	source: 'outdoor',
+		// 	'source-layer': 'trail',
+		// 	minzoom: 17,
+		// 	layout: {
+		// 		'text-font': ['Open Sans Bold', 'Noto Sans Bold'],
+		// 		'text-size': 16,
+		// 		'text-field': '.',
+		// 		visibility: 'visible',
+		// 		'icon-anchor': 'bottom',
+		// 		'symbol-spacing': 20,
+		// 		'symbol-placement': 'line'
+		// 	},
+		// 	paint: {
+		// 		'text-color': 'rgba(205, 35, 2, 1)',
+		// 		'text-halo-color': 'rgba(255, 255, 255, 1)',
+		// 		'text-halo-width': 1
+		// 	},
+		// 	filter: ['all', ['==', 'class', 'via_ferrata']]
+		// },
 		{
 			id: 'bicycle_local_casing',
 			type: 'line',
@@ -2759,53 +2759,53 @@ const style: maplibregl.StyleSpecification = {
 			},
 			filter: ['all', ['in', 'network', 'icn', 'ncn'], ['has', 'ref']]
 		},
-		{
-			id: 'cablecar',
-			type: 'line',
-			source: 'maptiler_planet',
-			'source-layer': 'transportation',
-			minzoom: 12,
-			maxzoom: 24,
-			layout: {
-				'line-cap': 'round',
-				visibility: 'visible'
-			},
-			paint: {
-				'line-color': 'rgba(92, 92, 92, 1)',
-				'line-width': {
-					base: 1,
-					stops: [
-						[12, 3],
-						[22, 4.5]
-					]
-				}
-			},
-			filter: ['==', 'class', 'aerialway']
-		},
-		{
-			id: 'cablecar-dash',
-			type: 'line',
-			source: 'maptiler_planet',
-			'source-layer': 'transportation',
-			minzoom: 12,
-			maxzoom: 24,
-			layout: {
-				'line-cap': 'round',
-				visibility: 'visible'
-			},
-			paint: {
-				'line-color': 'rgba(244, 244, 244, 1)',
-				'line-width': {
-					base: 1,
-					stops: [
-						[11, 1.5],
-						[19, 3]
-					]
-				},
-				'line-dasharray': [2.5, 4]
-			},
-			filter: ['==', 'class', 'aerialway']
-		},
+		// {
+		// 	id: 'cablecar',
+		// 	type: 'line',
+		// 	source: 'maptiler_planet',
+		// 	'source-layer': 'transportation',
+		// 	minzoom: 12,
+		// 	maxzoom: 24,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		visibility: 'visible'
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(92, 92, 92, 1)',
+		// 		'line-width': {
+		// 			base: 1,
+		// 			stops: [
+		// 				[12, 3],
+		// 				[22, 4.5]
+		// 			]
+		// 		}
+		// 	},
+		// 	filter: ['==', 'class', 'aerialway']
+		// },
+		// {
+		// 	id: 'cablecar-dash',
+		// 	type: 'line',
+		// 	source: 'maptiler_planet',
+		// 	'source-layer': 'transportation',
+		// 	minzoom: 12,
+		// 	maxzoom: 24,
+		// 	layout: {
+		// 		'line-cap': 'round',
+		// 		visibility: 'visible'
+		// 	},
+		// 	paint: {
+		// 		'line-color': 'rgba(244, 244, 244, 1)',
+		// 		'line-width': {
+		// 			base: 1,
+		// 			stops: [
+		// 				[11, 1.5],
+		// 				[19, 3]
+		// 			]
+		// 		},
+		// 		'line-dasharray': [2.5, 4]
+		// 	},
+		// 	filter: ['==', 'class', 'aerialway']
+		// },
 		// {
 		// 	id: 'outdoor_poi_parking',
 		// 	type: 'symbol',
@@ -3474,9 +3474,8 @@ const style: maplibregl.StyleSpecification = {
 				'text-size': {
 					base: 1,
 					stops: [
-						[13, 10],
-						[14, 11],
-						[16, 13]
+						[14, 9],
+						[16, 12]
 					]
 				},
 				'text-field': '{name:latin}',
@@ -3681,8 +3680,8 @@ const style: maplibregl.StyleSpecification = {
 				},
 				'text-halo-width': {
 					stops: [
-						[11, 2],
-						[15, 1.3]
+						[11, 1.5],
+						[15, 1]
 					]
 				}
 			},
@@ -3750,8 +3749,8 @@ const style: maplibregl.StyleSpecification = {
 				},
 				'text-halo-width': {
 					stops: [
-						[11, 2],
-						[15, 1.3]
+						[11, 1.5],
+						[15, 1]
 					]
 				}
 			},
@@ -3979,47 +3978,47 @@ const style: maplibregl.StyleSpecification = {
 				'text-max-width': 8
 			},
 			paint: {
-				'text-color': 'rgba(30, 30, 34, 1)',
+				'text-color': 'rgba(255, 255, 255, 1)',
 				'text-halo-color': 'rgba(255,255,255,0.8)',
-				'text-halo-width': 1.9
+				'text-halo-width': 0
 			},
 			metadata: {},
 			filter: ['all', ['==', 'class', 'village']]
 		},
-		{
-			id: 'place_other',
-			type: 'symbol',
-			source: 'maptiler_planet',
-			'source-layer': 'place',
-			layout: {
-				'text-font': ['Roboto Condensed Italic', 'Noto Sans Italic'],
-				'text-size': {
-					base: 1.2,
-					stops: [
-						[11, 11],
-						[16, 16]
-					]
-				},
-				'text-field': '{name:latin}',
-				visibility: 'visible',
-				'text-max-width': 9,
-				'text-transform': 'none',
-				'text-letter-spacing': 0.1
-			},
-			paint: {
-				'text-color': {
-					stops: [
-						[10, 'rgba(51, 51, 57, 1)'],
-						[14, 'rgba(28, 28, 30, 1)']
-					]
-				},
-				'text-halo-blur': 0.1,
-				'text-halo-color': 'rgba(255,255,255,0.8)',
-				'text-halo-width': 2
-			},
-			metadata: {},
-			filter: ['all', ['in', 'class', 'hamlet', 'island', 'islet', 'neighbourhood', 'suburb']]
-		},
+		// {
+		// 	id: 'place_other',
+		// 	type: 'symbol',
+		// 	source: 'maptiler_planet',
+		// 	'source-layer': 'place',
+		// 	layout: {
+		// 		'text-font': ['Roboto Condensed Italic', 'Noto Sans Italic'],
+		// 		'text-size': {
+		// 			base: 1.2,
+		// 			stops: [
+		// 				[11, 11],
+		// 				[16, 16]
+		// 			]
+		// 		},
+		// 		'text-field': '{name:latin}',
+		// 		visibility: 'visible',
+		// 		'text-max-width': 9,
+		// 		'text-transform': 'none',
+		// 		'text-letter-spacing': 0.1
+		// 	},
+		// 	paint: {
+		// 		'text-color': {
+		// 			stops: [
+		// 				[10, 'rgba(51, 51, 57, 1)'],
+		// 				[14, 'rgba(28, 28, 30, 1)']
+		// 			]
+		// 		},
+		// 		'text-halo-blur': 0.1,
+		// 		'text-halo-color': 'rgba(255,255,255,0.8)',
+		// 		'text-halo-width': 2
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['in', 'class', 'hamlet', 'island', 'islet', 'neighbourhood', 'suburb']]
+		// },
 		{
 			id: 'place_town',
 			type: 'symbol',
@@ -4212,7 +4211,7 @@ const style: maplibregl.StyleSpecification = {
 			paint: {
 				'text-color': 'rgba(118, 116, 108, 1)',
 				'text-halo-color': 'rgba(255,255,255,0.7)',
-				'text-halo-width': 0.8
+				'text-halo-width': 0.4
 			},
 			metadata: {},
 			filter: ['all', ['==', 'class', 'state'], ['in', 'rank', 3, 4, 5]]

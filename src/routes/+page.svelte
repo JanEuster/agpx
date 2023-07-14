@@ -4,8 +4,10 @@
 	import { readGPXFromFile } from '../utils/GPXLoader';
 	import TrackView from '../components/TrackView.svelte';
 	import AnimationOverlay from '../components/AnimationOverlay.svelte';
+	import type { AnimationOverlayData } from '../components/types';
 
 	let gpxFile: gpx.document | null;
+	let overlayData: AnimationOverlayData | null;
 	let setGPXFile = (f: gpx.document | null) => {
 		gpxFile = null;
 		setTimeout(() => {
@@ -15,11 +17,18 @@
 	};
 	let openAnimationEditor = (trk: gpx.trkType, segmentIndex: number) => {
 		let trkseg = trk.trkseg![segmentIndex];
+		overlayData = {
+			trk: trk,
+			segIndex: segmentIndex,
+			trkseg: trkseg
+		};
 	};
 </script>
 
-<AnimationOverlay />
-<div style="padding: 10px 30px; max-width: 1600px; margin: auto;">
+{#if overlayData}
+	<AnimationOverlay data={overlayData} onClose={() => (overlayData = null)} />
+{/if}
+<div class="app" style={overlayData ? 'overflow: hidden; max-height: 100vh;' : ''}>
 	<h1>Analyze GPX</h1>
 	<label for="file-input">Load GPX File</label>
 	<input
@@ -47,3 +56,11 @@
 		{/each}
 	{/if}
 </div>
+
+<style lang="scss">
+	.app {
+		padding: 10px 30px;
+		max-width: 1600px;
+		margin: auto;
+	}
+</style>
