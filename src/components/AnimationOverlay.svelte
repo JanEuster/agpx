@@ -6,54 +6,6 @@
 
 	onMount(() => {
 		const map = (window.map = new maplibregl.Map({
-			// style: {
-			// 	version: 8,
-			// 	sources: {
-			// 		osm: {
-			// 			type: 'raster',
-			// 			tiles: ['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'],
-			// 			tileSize: 256,
-			// 			attribution: '&copy; OpenStreetMap Contributors',
-			// 			maxzoom: 19
-			// 		},
-			// 		satellite: {
-			// 			type: 'raster',
-			// 			tiles: [`https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=${MAPTILER_KEY}`],
-			// 			tileSize: 512,
-			// 			maxzoom: 19
-			// 		}
-			// 		// Use a different source for terrain and hillshade layers, to improve render quality
-			// 		// terrainSource: {
-			// 		// 	type: 'raster-dem',
-			// 		// 	// url: 'https://demotiles.maplibre.org/terrain-tiles/tiles.json',
-			// 		//   url: `https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=${MAPTILER_KEY}`,
-			// 		// 	tileSize: 256
-			// 		// },
-			// 		// hillshadeSource: {
-			// 		// 	type: 'raster-dem',
-			// 		// 	url: 'https://demotiles.maplibre.org/terrain-tiles/tiles.json',
-			// 		// 	tileSize: 256
-			// 		// }
-			// 	},
-			// 	layers: [
-			// 		{
-			// 			id: 'satellite',
-			// 			type: 'raster',
-			// 			source: 'satellite'
-			// 		}
-			// 		// {
-			// 		// 	id: 'hills',
-			// 		// 	type: 'hillshade',
-			// 		// 	source: 'hillshadeSource',
-			// 		// 	layout: { visibility: 'visible' },
-			// 		// 	paint: { 'hillshade-shadow-color': '#473B24' }
-			// 		// }
-			// 	]
-			// 	// terrain: {
-			// 	// 	source: 'terrainSource',
-			// 	// 	exaggeration: 1
-			// 	// }
-			// },
 			style: style,
 			container: 'maplibre-animation-map',
 			center: [6.85684, 45.83595],
@@ -74,7 +26,7 @@
 			});
 			map.setTerrain({
 				source: 'terrain',
-				exaggeration: 2.5
+				exaggeration: 1
 			});
 		});
 	});
@@ -82,7 +34,11 @@
 
 <svelte:head>
 	<link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
-</svelte:head>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700&family=Roboto+Condensed:ital@1&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+		rel="stylesheet"
+	/></svelte:head
+>
 
 <div class="anim-over-wrapper">
 	<div class="anim-over-inner">

@@ -1,7 +1,7 @@
 import * as maplibregl from 'maplibre-gl';
 export const MAPTILER_KEY = 'JuQoY2K9vHDiqC2SXZ10';
 
-const style = {
+const style: maplibregl.StyleSpecification = {
 	version: 8,
 	id: 'outdoor',
 	name: 'Outdoor',
@@ -9,8 +9,8 @@ const style = {
 		satellite: {
 			type: 'raster',
 			tiles: [`https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=${MAPTILER_KEY}`],
-			tileSize: 256,
-			attribution: '&copy; OpenStreetMap Contributors',
+			tileSize: 512,
+			// attribution: '&copy; OpenStreetMap Contributors',
 			maxzoom: 19
 		},
 		outdoor: {
@@ -21,11 +21,11 @@ const style = {
 			url: `https://api.maptiler.com/tiles/contours/tiles.json?key=${MAPTILER_KEY}`,
 			type: 'vector'
 		},
-		'terrain-rgb': {
-			url: `https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=${MAPTILER_KEY}`,
-			tileSize: 512,
-			type: 'raster-dem'
-		},
+		// 'terrain-rgb': {
+		// 	url: `https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=${MAPTILER_KEY}`,
+		// 	tileSize: 512,
+		// 	type: 'raster-dem'
+		// },
 		maptiler_planet: {
 			url: `https://api.maptiler.com/tiles/v3/tiles.json?key=${MAPTILER_KEY}`,
 			type: 'vector'
