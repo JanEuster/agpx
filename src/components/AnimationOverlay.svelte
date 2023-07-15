@@ -35,7 +35,12 @@
 			});
 
 			// add gpx line
-			map.setCenter([data.trkseg.trkpt[0].lon, data.trkseg.trkpt[0].lat]);
+			const routeStart: [number, number] = [data.trkseg.trkpt[0].lon, data.trkseg.trkpt[0].lat];
+			const routeEnd: [number, number] = [
+				data.trkseg.trkpt[data.trkseg.trkpt.length - 1].lon,
+				data.trkseg.trkpt[data.trkseg.trkpt.length - 1].lat
+			];
+			map.setCenter(routeStart);
 			const gpxLine = {
 				type: 'FeatureCollection',
 				features: [
@@ -48,7 +53,6 @@
 					}
 				]
 			};
-			console.log(gpxLine.features[0].geometry.coordinates);
 			map.addSource('line', {
 				type: 'geojson',
 				data: gpxLine
@@ -74,6 +78,117 @@
 					'line-opacity': 0.8
 				}
 			});
+
+			// line start and finish icons
+			const start_marker = {
+				type: 'FeatureCollection',
+				features: [
+					{
+						type: 'Feature',
+						properties: {
+							icon: 'finish',
+							iconSize: [40, 40]
+						},
+						geometry: {
+							type: 'Point',
+							coordinates: routeStart
+						}
+					}
+				]
+			};
+
+			map.addSource('start_marker', {
+				type: 'geojson',
+				data: start_marker
+			});
+			const finish_marker = {
+				type: 'FeatureCollection',
+				features: [
+					{
+						type: 'Feature',
+						properties: {
+							icon: 'finish',
+							iconSize: [40, 40]
+						},
+						geometry: {
+							type: 'Point',
+							coordinates: routeEnd
+						}
+					}
+				]
+			};
+
+			map.addSource('finish_marker', {
+				type: 'geojson',
+				data: finish_marker
+			});
+			// line start icon
+			map.loadImage('/start.png', (error, image) => {
+				if (error) throw error;
+				map.addImage('start_icon', image!);
+				map.addLayer({
+					id: 'start_marker',
+					type: 'symbol',
+					source: 'start_marker',
+					layout: {
+						'icon-image': 'start_icon',
+						'icon-size': 0.5
+					}
+				});
+			});
+			// line finish icon
+			map.loadImage('/finish.png', (error, image) => {
+				if (error) throw error;
+				map.addImage('finish_icon', image!);
+				map.addLayer({
+					id: 'finish_marker',
+					type: 'symbol',
+					source: 'finish_marker',
+					layout: {
+						'icon-image': 'finish_icon',
+						'icon-size': 0.5
+					}
+				});
+			});
+
+			// icons.features.forEach((feature) => {
+			// 	const symbol = feature.properties['icon'];
+			// 	const layerID = `poi-${symbol}`;
+
+			// 	// Add a layer for this symbol type if it hasn't been added already.
+			// 	if (!map.getLayer(layerID)) {
+			// 		map.addLayer({
+			// 			id: layerID,
+			// 			type: 'symbol',
+			// 			source: 'markers',
+			// 			layout: {
+			// 				'icon-image': `${symbol}_15`,
+			// 				'icon-overlap': 'always'
+			// 			},
+			// 			filter: ['==', 'icon', symbol]
+			// 		});
+			// 	}
+			// });
+
+			// // add markers to map
+			// icons.features.forEach((marker) => {
+			// 	// create a DOM element for the marker
+			// 	const el = document.createElement('div');
+			// 	el.className = 'marker';
+			// 	el.style.backgroundImage = `url(https://placekitten.com/g/${marker.properties.iconSize.join(
+			// 		'/'
+			// 	)}/)`;
+			// 	console.log(el.style.backgroundImage);
+			// 	el.style.width = `${marker.properties.iconSize[0]}px`;
+			// 	el.style.height = `${marker.properties.iconSize[1]}px`;
+
+			// 	el.addEventListener('click', () => {
+			// 		window.alert(marker.properties.message);
+			// 	});
+
+			// 	// add marker to map
+			// 	new maplibregl.Marker(el).setLngLat(marker.geometry.coordinates).addTo(map);
+			// });
 		});
 	});
 </script>
