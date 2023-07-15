@@ -4,24 +4,90 @@
 	import * as maplibregl from 'maplibre-gl';
 	import style, { MAPTILER_KEY } from './MapLibreStyle';
 	import type { AnimationOverlayData } from './types';
-	import { gpxType } from '../utils/gpx_schema';
+	import { getTripSteps, getTripDuration, visvalingamSimplify } from './utils';
 
 	export let data: AnimationOverlayData;
 	export let onClose: () => void;
 
 	onMount(() => {
-		const map = (window.map = new maplibregl.Map({
+		const map = new maplibregl.Map({
 			style: style,
 			container: 'maplibre-animation-map',
 			center: [6.85684, 45.83595],
 			zoom: 9
-		}));
+		});
+
+		// in hours
+		const duration = getTripDuration(data.trkseg.trkpt!);
+		// in seconds
+		const panDuration = (duration * 3600) / 12000;
+		const simplifiedTrkPts = visvalingamSimplify(
+			data.trkseg.trkpt!,
+			Math.round(data.trkseg.trkpt!.length * 0.9),
+			0.000005
+		);
+		const smoothedTrkPts = simplifiedTrkPts;
+		const timeSteps = getTripSteps(smoothedTrkPts);
+
 		map.on('load', () => {
+			const routeStart: [number, number] = [
+				data.trkseg.trkpt![0].lon as number,
+				data.trkseg.trkpt![0].lat as number
+			];
+			const routeEnd: [number, number] = [
+				data.trkseg.trkpt![data.trkseg.trkpt!.length - 1].lon as number,
+				data.trkseg.trkpt![data.trkseg.trkpt!.length - 1].lat as number
+			];
+			setTimeout(() => {
+				console.log('flyTo');
+				map.flyTo({
+					center: routeStart,
+					zoom: 17,
+					bearing: -90,
+					pitch: 40,
+					animate: true,
+					essential: true,
+					duration: 5000
+				});
+				setTimeout(async () => {
+					await new Promise((res) => {
+						map.zoomTo(15.5, { duration: 1000 });
+						setTimeout(res, 1000);
+					});
+					for (const step of timeSteps) {
+						console.log(step);
+						const duration = step[0] * panDuration * 1000;
+						map.panTo([step[1].lon as number, step[1].lat as number], {
+							duration: duration,
+							essential: true,
+							easing: (t) => t
+						});
+						await new Promise((res) => {
+							setTimeout(res, duration);
+						});
+					}
+
+					// map.panTo(routeEnd, { essential: true, duration: panDuration * 1000 });
+					// setTimeout(() => {
+					// 	map.jumpTo({ center: routeStart });
+					// 	setTimeout(() => {
+					// 		map.panTo(routeEnd, { essential: true, duration: panDuration * 1000 });
+					// 	}, 1000);
+					// }, panDuration * 1000);
+				}, 5000);
+			}, 5000);
+
 			map.addControl(
 				new maplibregl.NavigationControl({
 					visualizePitch: true,
 					showZoom: true,
 					showCompass: true
+				})
+			);
+			map.addControl(
+				new maplibregl.TerrainControl({
+					source: 'terrain',
+					exaggeration: 1
 				})
 			);
 
@@ -35,12 +101,6 @@
 			});
 
 			// add gpx line
-			const routeStart: [number, number] = [data.trkseg.trkpt[0].lon, data.trkseg.trkpt[0].lat];
-			const routeEnd: [number, number] = [
-				data.trkseg.trkpt[data.trkseg.trkpt.length - 1].lon,
-				data.trkseg.trkpt[data.trkseg.trkpt.length - 1].lat
-			];
-			map.setCenter(routeStart);
 			const gpxLine = {
 				type: 'FeatureCollection',
 				features: [
@@ -48,7 +108,8 @@
 						type: 'Feature',
 						geometry: {
 							type: 'LineString',
-							coordinates: data.trkseg.trkpt.map((p: gpx.wptType) => [p.lon, p.lat])
+							coordinates: data.trkseg.trkpt!.map((p: gpx.wptType) => [p.lon, p.lat])
+							// coordinates: simplifiedTrkPts.map((p: gpx.wptType) => [p.lon, p.lat])
 						}
 					}
 				]
@@ -245,7 +306,7 @@
 				bottom: 0;
 				// transform: translateY(-100);
 				width: 100%;
-				height: 40px;
+				height: 60px;
 				user-select: none;
 				background: rgba(26, 25, 41, 0.8);
 			}
