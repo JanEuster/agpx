@@ -1,3 +1,4 @@
+import maplibreGl from 'maplibre-gl';
 import * as gpx from '../utils/gpx_schema';
 
 /**
@@ -40,6 +41,8 @@ const triangleArea = (tri: [number, number][]): number => {
  * and triangle areas for neighboring point are reevaluated
  *
  * - optional threshold will stop simplifying when a certain smallest triangle area threshold is reached
+ *
+ * https://bost.ocks.org/mike/simplify/
  */
 export const visvalingamSimplify = (
 	line: gpx.wptType[],
@@ -92,3 +95,33 @@ export const visvalingamSimplify = (
 	console.log('simplified to length', newLine.length, 'from', line.length);
 	return newLine;
 };
+
+/**
+ *
+ */
+
+export class CustomControl extends maplibreGl.Evented implements maplibregl.IControl {
+	img: string;
+	label: string;
+	callback: () => void;
+	constructor(options: { img: string; label: string; callback: () => void }) {
+		super();
+		this.callback = options.callback;
+		this.img = options.img;
+		this.label = options.label;
+	}
+	onAdd(map: maplibregl.Map): HTMLElement {
+		const div = document.createElement('div');
+		div.className = 'maplibregl-ctrl maplibregl-ctrl-group';
+		div.innerHTML = `<button>
+	<svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" style="font-size: 20px;"><title>${this.label}</title><image x="4" y="4" width="16" height="16" href="${this.img}" /></svg>
+	</button>`;
+		div.addEventListener('contextmenu', (e) => e.preventDefault());
+		div.addEventListener('click', () => this.callback());
+
+		return div;
+	}
+	onRemove() {
+		return;
+	}
+}

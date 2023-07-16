@@ -4,7 +4,7 @@
 	import * as maplibregl from 'maplibre-gl';
 	import style, { MAPTILER_KEY } from './MapLibreStyle';
 	import type { AnimationOverlayData } from './types';
-	import { getTripSteps, getTripDuration, visvalingamSimplify } from './utils';
+	import { getTripSteps, getTripDuration, visvalingamSimplify, CustomControl } from './utils';
 
 	export let data: AnimationOverlayData;
 	export let onClose: () => void;
@@ -50,23 +50,22 @@
 					duration: 5000
 				});
 				setTimeout(async () => {
-					await new Promise((res) => {
-						map.zoomTo(15.5, { duration: 1000 });
-						setTimeout(res, 1000);
-					});
-					for (const step of timeSteps) {
-						console.log(step);
-						const duration = step[0] * panDuration * 1000;
-						map.panTo([step[1].lon as number, step[1].lat as number], {
-							duration: duration,
-							essential: true,
-							easing: (t) => t
-						});
-						await new Promise((res) => {
-							setTimeout(res, duration);
-						});
-					}
-
+					// await new Promise((res) => {
+					// 	map.zoomTo(15.5, { duration: 1000 });
+					// 	setTimeout(res, 1000);
+					// });
+					// for (const step of timeSteps) {
+					// 	console.log(step);
+					// 	const duration = step[0] * panDuration * 1000;
+					// 	map.panTo([step[1].lon as number, step[1].lat as number], {
+					// 		duration: duration,
+					// 		essential: true,
+					// 		easing: (t) => t
+					// 	});
+					// 	await new Promise((res) => {
+					// 		setTimeout(res, duration);
+					// 	});
+					// }
 					// map.panTo(routeEnd, { essential: true, duration: panDuration * 1000 });
 					// setTimeout(() => {
 					// 	map.jumpTo({ center: routeStart });
@@ -88,6 +87,19 @@
 				new maplibregl.TerrainControl({
 					source: 'terrain',
 					exaggeration: 1
+				})
+			);
+			map.addControl(
+				new maplibregl.FullscreenControl({
+					container: document.getElementsByClassName('anim-over-wrapper')[0] as HTMLElement
+				})
+			);
+
+			map.addControl(
+				new CustomControl({
+					callback: () => onClose(),
+					img: '/cursor_x.png',
+					label: 'Close Animation View'
 				})
 			);
 
@@ -211,45 +223,6 @@
 					}
 				});
 			});
-
-			// icons.features.forEach((feature) => {
-			// 	const symbol = feature.properties['icon'];
-			// 	const layerID = `poi-${symbol}`;
-
-			// 	// Add a layer for this symbol type if it hasn't been added already.
-			// 	if (!map.getLayer(layerID)) {
-			// 		map.addLayer({
-			// 			id: layerID,
-			// 			type: 'symbol',
-			// 			source: 'markers',
-			// 			layout: {
-			// 				'icon-image': `${symbol}_15`,
-			// 				'icon-overlap': 'always'
-			// 			},
-			// 			filter: ['==', 'icon', symbol]
-			// 		});
-			// 	}
-			// });
-
-			// // add markers to map
-			// icons.features.forEach((marker) => {
-			// 	// create a DOM element for the marker
-			// 	const el = document.createElement('div');
-			// 	el.className = 'marker';
-			// 	el.style.backgroundImage = `url(https://placekitten.com/g/${marker.properties.iconSize.join(
-			// 		'/'
-			// 	)}/)`;
-			// 	console.log(el.style.backgroundImage);
-			// 	el.style.width = `${marker.properties.iconSize[0]}px`;
-			// 	el.style.height = `${marker.properties.iconSize[1]}px`;
-
-			// 	el.addEventListener('click', () => {
-			// 		window.alert(marker.properties.message);
-			// 	});
-
-			// 	// add marker to map
-			// 	new maplibregl.Marker(el).setLngLat(marker.geometry.coordinates).addTo(map);
-			// });
 		});
 	});
 </script>
