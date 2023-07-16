@@ -638,44 +638,44 @@ const style: maplibregl.StyleSpecification = {
 		// 	metadata: {},
 		// 	filter: ['==', '$type', 'Polygon']
 		// },
-		{
-			id: 'aeroway_runway',
-			type: 'line',
-			source: 'maptiler_planet',
-			'source-layer': 'aeroway',
-			minzoom: 11,
-			paint: {
-				'line-color': 'rgba(255, 255, 255, 1)',
-				'line-width': {
-					base: 1.2,
-					stops: [
-						[11, 3],
-						[20, 16]
-					]
-				}
-			},
-			metadata: {},
-			filter: ['all', ['==', '$type', 'LineString'], ['==', 'class', 'runway']]
-		},
-		{
-			id: 'aeroway_taxiway',
-			type: 'line',
-			source: 'maptiler_planet',
-			'source-layer': 'aeroway',
-			minzoom: 11,
-			paint: {
-				'line-color': 'rgba(255, 255, 255, 1)',
-				'line-width': {
-					base: 1.2,
-					stops: [
-						[11, 0.5],
-						[20, 6]
-					]
-				}
-			},
-			metadata: {},
-			filter: ['all', ['==', '$type', 'LineString'], ['==', 'class', 'taxiway']]
-		},
+		// {
+		// 	id: 'aeroway_runway',
+		// 	type: 'line',
+		// 	source: 'maptiler_planet',
+		// 	'source-layer': 'aeroway',
+		// 	minzoom: 11,
+		// 	paint: {
+		// 		'line-color': 'rgba(255, 255, 255, 1)',
+		// 		'line-width': {
+		// 			base: 1.2,
+		// 			stops: [
+		// 				[11, 3],
+		// 				[20, 16]
+		// 			]
+		// 		}
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', '$type', 'LineString'], ['==', 'class', 'runway']]
+		// },
+		// {
+		// 	id: 'aeroway_taxiway',
+		// 	type: 'line',
+		// 	source: 'maptiler_planet',
+		// 	'source-layer': 'aeroway',
+		// 	minzoom: 11,
+		// 	paint: {
+		// 		'line-color': 'rgba(255, 255, 255, 1)',
+		// 		'line-width': {
+		// 			base: 1.2,
+		// 			stops: [
+		// 				[11, 0.5],
+		// 				[20, 6]
+		// 			]
+		// 		}
+		// 	},
+		// 	metadata: {},
+		// 	filter: ['all', ['==', '$type', 'LineString'], ['==', 'class', 'taxiway']]
+		// },
 		{
 			id: 'ferry',
 			type: 'line',
@@ -3638,7 +3638,7 @@ const style: maplibregl.StyleSpecification = {
 						[14, 1]
 					]
 				},
-				'text-font': ['Roboto Condensed Italic', 'Noto Sans Italic'],
+				'text-font': ['Roboto Condensed Bold Italic', 'Noto Sans Italic'],
 				'text-size': {
 					stops: [
 						[7, 9],
@@ -3707,12 +3707,12 @@ const style: maplibregl.StyleSpecification = {
 						[14, 1]
 					]
 				},
-				'text-font': ['Roboto Condensed Italic', 'Noto Sans Italic'],
+				'text-font': ['Roboto Condensed Bold Italic', 'Noto Sans Italic'],
 				'text-size': {
 					stops: [
 						[7, 9],
 						[11, 10],
-						[13, 14]
+						[13, 12]
 					]
 				},
 				'icon-image': 'peak',
@@ -4061,11 +4061,11 @@ const style: maplibregl.StyleSpecification = {
 			minzoom: 10,
 			maxzoom: 24,
 			layout: {
-				'text-font': ['Roboto Condensed Italic', 'Noto Sans Italic'],
+				'text-font': ['Roboto Condensed Bold Italic', 'Noto Sans Italic'],
 				'text-size': {
 					stops: [
-						[13, 13],
-						[16, 14]
+						[13, 14],
+						[16, 15]
 					]
 				},
 				'text-field': '{name:latin}',
@@ -4080,12 +4080,12 @@ const style: maplibregl.StyleSpecification = {
 			},
 			paint: {
 				'text-color': 'rgba(24, 107, 32, 1)',
-				'text-halo-blur': {
-					stops: [
-						[9, 3],
-						[14, 0.5]
-					]
-				},
+				// 'text-halo-blur': {
+				// 	stops: [
+				// 		[9, 3],
+				// 		[14, 0.5]
+				// 	]
+				// },
 				'text-halo-color': {
 					stops: [
 						[9, 'rgba(239, 249, 239, 0.89)'],

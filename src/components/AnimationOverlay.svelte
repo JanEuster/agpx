@@ -230,10 +230,10 @@
 <svelte:head>
 	<link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700&family=Roboto+Condensed:ital@1&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700&family=Roboto+Condensed:ital,wght@1,400;1,700&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
 		rel="stylesheet"
-	/></svelte:head
->
+	/>
+</svelte:head>
 
 <div class="anim-over-wrapper">
 	<div class="anim-over-inner">
