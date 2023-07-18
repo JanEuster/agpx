@@ -4,7 +4,13 @@
 	import * as maplibregl from 'maplibre-gl';
 	import style, { MAPTILER_KEY } from './MapLibreStyle';
 	import type { AnimationOverlayData } from './types';
-	import { getTripSteps, getTripDuration, visvalingamSimplify, CustomControl } from './utils';
+	import {
+		getTripSteps,
+		getTripDuration,
+		visvalingamSimplify,
+		CustomControl,
+		movingAverageSmoothing
+	} from './utils';
 
 	export let data: AnimationOverlayData;
 	export let onClose: () => void;
@@ -24,9 +30,9 @@
 		const simplifiedTrkPts = visvalingamSimplify(
 			data.trkseg.trkpt!,
 			Math.round(data.trkseg.trkpt!.length * 0.9),
-			0.000005
+			0.0000006
 		);
-		const smoothedTrkPts = simplifiedTrkPts;
+		const smoothedTrkPts = movingAverageSmoothing(simplifiedTrkPts);
 		const timeSteps = getTripSteps(smoothedTrkPts);
 
 		map.on('load', () => {
@@ -49,7 +55,8 @@
 					for (const step of timeSteps) {
 						console.log(step);
 						const duration = step[0] * panDuration * 1000;
-						map.panTo([step[1].lon as number, step[1].lat as number], {
+						map.easeTo({
+							center: [step[1].lon as number, step[1].lat as number],
 							duration: duration,
 							essential: true,
 							easing: (t) => t
@@ -73,7 +80,7 @@
 					bearing: -90,
 					pitch: 40,
 					animate: true,
-					essential: true,
+					// essential: true,
 					duration: 5000
 				});
 			}, 5000);
@@ -99,14 +106,14 @@
 
 			map.addControl(
 				new CustomControl({
-					callback: () => map.flyTo({ center: routeStart }),
+					callback: () => map.easeTo({ center: routeStart, duration: 5000, essential: true }),
 					img: '/start_bw.png',
 					label: 'Go to Start'
 				})
 			);
 			map.addControl(
 				new CustomControl({
-					callback: () => map.flyTo({ center: routeEnd }),
+					callback: () => map.easeTo({ center: routeEnd, duration: 5000, essential: true }),
 					img: '/finish_bw.png',
 					label: 'Go to Finish'
 				})
@@ -151,7 +158,14 @@
 						geometry: {
 							type: 'LineString',
 							coordinates: data.trkseg.trkpt!.map((p: gpx.wptType) => [p.lon, p.lat])
+						}
+					},
+					{
+						type: 'Feature',
+						geometry: {
+							type: 'LineString',
 							// coordinates: simplifiedTrkPts.map((p: gpx.wptType) => [p.lon, p.lat])
+							coordinates: smoothedTrkPts.map((p: gpx.wptType) => [p.lon, p.lat])
 						}
 					}
 				]

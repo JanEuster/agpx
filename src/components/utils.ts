@@ -97,8 +97,60 @@ export const visvalingamSimplify = (
 };
 
 /**
+ * https://en.wikipedia.org/wiki/Normal_distribution#Standard_normal_distribution
+ * @param z
+ */
+const normalDistribution = (z: number) => {
+	return Math.exp(-(Math.pow(z, 2) / 2)) / Math.sqrt(2 * Math.PI);
+};
+
+const normalizeArray = (arr: number[]) => {
+	const sum = arr.reduce((partialSum, a) => partialSum + a, 0);
+	return arr.map((n) => n / sum);
+};
+
+function clone(obj: object) {
+	if (null == obj || 'object' != typeof obj) return obj;
+	const copy = obj.constructor();
+	for (const attr in obj) {
+		if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+	}
+	return copy;
+}
+/**
  *
  */
+export const movingAverageSmoothing = (line: gpx.wptType[], kernelSize = 1): gpx.wptType[] => {
+	const start: gpx.wptType[] = Array(kernelSize * 2 + 1).fill(line[0]);
+	const end: gpx.wptType[] = Array(kernelSize * 2 + 1).fill(line[line.length - 1]);
+
+	const paddedLine = [...start, ...line, ...end];
+	const smoothedLine: gpx.wptType[] = [];
+
+	const kernelWeights = normalizeArray(
+		// create array of length, set values
+		[...Array(kernelSize * 2 + 1)].map((_, i) => normalDistribution(i - kernelSize))
+	);
+	const movingAverage = (toAverage: number[]): number => {
+		return toAverage
+			.map((n, i) => n * kernelWeights[i])
+			.reduce((partialSum, n) => partialSum + n, 0);
+	};
+
+	for (let i = kernelSize; i < paddedLine.length - kernelSize; i++) {
+		const newPoint: gpx.wptType = clone(paddedLine[i]);
+		const lonArr: number[] = [];
+		const latArr: number[] = [];
+		for (let j = -kernelSize; j <= kernelSize; j++) {
+			lonArr.push(paddedLine[i + j].lon as number);
+			latArr.push(paddedLine[i + j].lat as number);
+		}
+		newPoint.lon = movingAverage(lonArr);
+		newPoint.lat = movingAverage(latArr);
+		smoothedLine.push(newPoint);
+	}
+	return smoothedLine;
+};
 
 export class CustomControl extends maplibreGl.Evented implements maplibregl.IControl {
 	img: string;
