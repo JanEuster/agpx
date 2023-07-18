@@ -38,6 +38,33 @@
 				data.trkseg.trkpt![data.trkseg.trkpt!.length - 1].lon as number,
 				data.trkseg.trkpt![data.trkseg.trkpt!.length - 1].lat as number
 			];
+
+			const playAnimation = () => {
+				map.jumpTo({ center: routeStart });
+				setTimeout(async () => {
+					await new Promise((res) => {
+						map.zoomTo(15.5, { duration: 1000 });
+						setTimeout(res, 1000);
+					});
+					for (const step of timeSteps) {
+						console.log(step);
+						const duration = step[0] * panDuration * 1000;
+						map.panTo([step[1].lon as number, step[1].lat as number], {
+							duration: duration,
+							essential: true,
+							easing: (t) => t
+						});
+						await new Promise((res) => {
+							setTimeout(res, duration);
+						});
+					}
+				}, 2000);
+			};
+
+			const recordAnimation = () => {
+				playAnimation();
+			};
+
 			setTimeout(() => {
 				console.log('flyTo');
 				map.flyTo({
@@ -49,31 +76,6 @@
 					essential: true,
 					duration: 5000
 				});
-				setTimeout(async () => {
-					// await new Promise((res) => {
-					// 	map.zoomTo(15.5, { duration: 1000 });
-					// 	setTimeout(res, 1000);
-					// });
-					// for (const step of timeSteps) {
-					// 	console.log(step);
-					// 	const duration = step[0] * panDuration * 1000;
-					// 	map.panTo([step[1].lon as number, step[1].lat as number], {
-					// 		duration: duration,
-					// 		essential: true,
-					// 		easing: (t) => t
-					// 	});
-					// 	await new Promise((res) => {
-					// 		setTimeout(res, duration);
-					// 	});
-					// }
-					// map.panTo(routeEnd, { essential: true, duration: panDuration * 1000 });
-					// setTimeout(() => {
-					// 	map.jumpTo({ center: routeStart });
-					// 	setTimeout(() => {
-					// 		map.panTo(routeEnd, { essential: true, duration: panDuration * 1000 });
-					// 	}, 1000);
-					// }, panDuration * 1000);
-				}, 5000);
 			}, 5000);
 
 			map.addControl(
@@ -97,8 +99,36 @@
 
 			map.addControl(
 				new CustomControl({
+					callback: () => map.flyTo({ center: routeStart }),
+					img: '/start_bw.png',
+					label: 'Go to Start'
+				})
+			);
+			map.addControl(
+				new CustomControl({
+					callback: () => map.flyTo({ center: routeEnd }),
+					img: '/finish_bw.png',
+					label: 'Go to Finish'
+				})
+			);
+			map.addControl(
+				new CustomControl({
+					callback: () => playAnimation(),
+					img: '/play.png',
+					label: 'Play Animation'
+				})
+			);
+			map.addControl(
+				new CustomControl({
+					callback: () => recordAnimation(),
+					img: '/record.png',
+					label: 'Record Animation Video'
+				})
+			);
+			map.addControl(
+				new CustomControl({
 					callback: () => onClose(),
-					img: '/cursor_x.png',
+					img: '/exit.png',
 					label: 'Close Animation View'
 				})
 			);

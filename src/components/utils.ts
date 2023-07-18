@@ -74,7 +74,7 @@ export const visvalingamSimplify = (
 		}
 		triangles.splice(minIndexTriangle - 1, 1);
 		newLine.splice(minIndex, 1);
-		console.log(smallestArea, i);
+		// console.log(smallestArea, i);
 
 		// recalculate neighboring triangles
 		if (minIndex - 1 > 0) {
@@ -114,7 +114,7 @@ export class CustomControl extends maplibreGl.Evented implements maplibregl.ICon
 		const div = document.createElement('div');
 		div.className = 'maplibregl-ctrl maplibregl-ctrl-group';
 		div.innerHTML = `<button>
-	<svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" style="font-size: 20px;"><title>${this.label}</title><image x="4" y="4" width="16" height="16" href="${this.img}" /></svg>
+	<svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" style="font-size: 20px;"><title>${this.label}</title><image x="2" y="2" width="20" height="20" href="${this.img}" /></svg>
 	</button>`;
 		div.addEventListener('contextmenu', (e) => e.preventDefault());
 		div.addEventListener('click', () => this.callback());
