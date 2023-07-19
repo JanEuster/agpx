@@ -26,6 +26,7 @@
 	let generatedId = 'leaflet_map_' + Math.round(Math.random() * 10000);
 	let map: L.Map | null = null;
 	let selectedMarker = L.circleMarker([0, 0], selectedMarkerOptions);
+	let isMounted = false;
 
 	onMount(() => {
 		map = L.map(generatedId).setView(points[0], 13);
@@ -44,9 +45,11 @@
 	});
 
 	$: {
-		console.log(selected, points[selected]);
-		selectedMarker.setLatLng(points[selected]);
-		map?.setView(points[selected], 16);
+		if (isMounted) {
+			console.log(selected, points[selected]);
+			selectedMarker.setLatLng(points[selected]);
+			map?.setView(points[selected], 16);
+		}
 	}
 </script>
 
